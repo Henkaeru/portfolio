@@ -223,13 +223,13 @@ const CONFIG = {
 
     // Custom theme, applied to `procyon` theme
     customTheme: {
-      primary: '#7D1B7E', // Deep violet
-      secondary: '#4A148C', // Darker violet
-      accent: '#C724B1', // Bright magenta accent
-      neutral: '#1E1B26', // Dark neutral background
-      'base-100': '#121017', // Near-black base color
-      '--rounded-box': '2rem', // Slightly rounded for a sleek look
-      '--rounded-btn': '2rem', // Matching button rounding
+      primary: '#9B5DE5', // Vibrant violet
+      secondary: '#FF6B6B', // Contrasting reddish-pink for pop
+      accent: '#FDCB58', // Warm gold for highlights
+      neutral: '#262335', // Dark but readable background
+      'base-100': '#3A314D', // Softer dark violet for contrast
+      '--rounded-box': '2.5rem', // Balanced rounded corners
+      '--rounded-btn': '2.5rem', // Matching buttons
     }
   },
 
