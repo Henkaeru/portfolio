@@ -52,8 +52,8 @@ const CONFIG = {
     },
   },
   seo: {
-    title: 'Portfolio of Ariful Alam',
-    description: '',
+    title: 'Portfolio of Keren Courtois',
+    description: 'Discover the portfolio of Keren Courtois, a passionate computer science student specializing in AI, software development, full-stack development, and data science projects.',
     imageURL: '',
   },
   social: {
@@ -223,14 +223,14 @@ const CONFIG = {
 
     // Custom theme, applied to `procyon` theme
     customTheme: {
-      primary: '#fc055b',
-      secondary: '#219aaf',
-      accent: '#e8d03a',
-      neutral: '#2A2730',
-      'base-100': '#E3E3ED',
-      '--rounded-box': '3rem',
-      '--rounded-btn': '3rem',
-    },
+      primary: '#7D1B7E', // Deep violet
+      secondary: '#4A148C', // Darker violet
+      accent: '#C724B1', // Bright magenta accent
+      neutral: '#1E1B26', // Dark neutral background
+      'base-100': '#121017', // Near-black base color
+      '--rounded-box': '2rem', // Slightly rounded for a sleek look
+      '--rounded-btn': '2rem', // Matching button rounding
+    }
   },
 
   // Optional Footer. Supports plain text or HTML.
