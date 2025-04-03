@@ -171,7 +171,7 @@ const CONFIG = {
     snippetVersion: 6,
   },
   themeConfig: {
-    defaultTheme: 'lofi',
+    defaultTheme: 'emerald',
 
     // Hides the switch in the navbar
     // Useful if you want to support a single color mode
@@ -187,37 +187,16 @@ const CONFIG = {
     // Available themes. To remove any theme, exclude from here.
     themes: [
       'light',
-      'dark',
-      'cupcake',
       'bumblebee',
       'emerald',
-      'corporate',
-      'synthwave',
-      'retro',
-      'cyberpunk',
-      'valentine',
-      'halloween',
       'garden',
-      'forest',
-      'aqua',
-      'lofi',
       'pastel',
       'fantasy',
-      'wireframe',
-      'black',
-      'luxury',
-      'dracula',
       'cmyk',
       'autumn',
-      'business',
-      'acid',
       'lemonade',
-      'night',
-      'coffee',
       'winter',
       'dim',
-      'nord',
-      'sunset',
       'procyon',
     ],
 
@@ -228,8 +207,8 @@ const CONFIG = {
       accent: '#FDCB58', // Warm gold for highlights
       neutral: '#262335', // Dark but readable background
       'base-100': '#3A314D', // Softer dark violet for contrast
-      '--rounded-box': '2.5rem', // Balanced rounded corners
-      '--rounded-btn': '2.5rem', // Matching buttons
+      '--rounded-box': '1rem', // Balanced rounded corners
+      '--rounded-btn': '0.5rem', // Matching buttons
     }
   },
 
