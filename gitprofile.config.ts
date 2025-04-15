@@ -13,23 +13,23 @@ const CONFIG = {
   projects: {
     github: {
       display: true, // Display GitHub projects?
-      header: 'Github Projects',
+      header: 'Projets',
       mode: 'automatic', // Mode can be: 'automatic' or 'manual'
       automatic: {
         sortBy: 'stars', // Sort projects by 'stars' or 'updated'
         limit: 8, // How many projects to display.
         exclude: {
           forks: false, // Forked projects will not be displayed if set to true.
-          projects: [], // These projects will not be displayed. example: ['arifszn/my-project1', 'arifszn/my-project2']
+          projects: [], // These projects will not be displayed.
         },
       },
       manual: {
         // Properties for manually specifying projects
-        projects: ['arifszn/gitprofile', 'arifszn/pandora'], // List of repository names to display. example: ['arifszn/my-project1', 'arifszn/my-project2']
+        projects: [], // List of repository names to display.
       },
     },
     external: {
-      header: 'My Projects',
+      /*header: 'Mes Projets',
       // To hide the `External Projects` section, keep it empty.
       projects: [
         {
@@ -48,58 +48,55 @@ const CONFIG = {
             'https://img.freepik.com/free-vector/illustration-gallery-icon_53876-27002.jpg',
           link: 'https://example.com',
         },
-      ],
+      ],*/
     },
   },
   seo: {
-    title: 'Portfolio of Keren Courtois',
-    description: 'Discover the portfolio of Keren Courtois, a passionate computer science student specializing in AI, software development, full-stack development, and data science projects.',
+    title: 'Keren Courtois Portfolio',
+    description: 'Bienvenue sur le portfolio de Keren Courtois, étudiant en informatique passionné, spécialisé en développement d\'applications, intelligence artificielle, full-stack et projets en science des données.',
     imageURL: '',
   },
   social: {
-    linkedin: 'ariful-alam',
-    x: 'arif_szn',
-    mastodon: 'arifszn@mastodon.social',
-    researchGate: '',
-    facebook: '',
-    instagram: '',
-    reddit: '',
-    threads: '',
-    youtube: '', // example: 'pewdiepie'
-    udemy: '',
-    dribbble: '',
-    behance: '',
-    medium: 'arifszn',
-    dev: 'arifszn',
-    stackoverflow: '', // example: '1/jeff-atwood'
-    skype: '',
-    telegram: '',
-    website: 'https://www.arifszn.com',
-    phone: '',
-    email: 'arifulalamszn@gmail.com',
+    linkedin: 'keren-courtois',
+    /*x: '',*/
+    /*mastodon: 'arifszn@mastodon.social',*/
+    /*researchGate: '',*/
+    /*facebook: '',*/
+    /*instagram: '',*/
+    /*reddit: '',*/
+    /*threads: '',*/
+    /*youtube: '',*/
+    /*udemy: '',*/
+    /*dribbble: '',*/
+    /*behance: '',*/
+    /*medium: '',*/
+    /*dev: '',*/
+    /*stackoverflow: '',*/
+    /*skype: '',*/
+    /*telegram: '',*/
+    /*website: 'https://www.kerencourtois.com',*/
+    phone: '06633430336',
+    email: 'kerencourtois@gmail.com',
   },
   resume: {
     fileUrl:
-      'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf', // Empty fileUrl will hide the `Download Resume` button.
+      'https://storage.rxresu.me/cm81qols94jso1492sjqz8rt2/resumes/cv-alternance.pdf',
   },
   skills: [
-    'PHP',
-    'Laravel',
-    'JavaScript',
-    'React.js',
-    'Node.js',
-    'Nest.js',
-    'MySQL',
+    'POO',
+    'C',
+    'Python',
+    'Java',
     'PostgreSQL',
+    'HTML',
+    'CSS',
+    'Figma',
+    'Bash',
     'Git',
     'Docker',
-    'PHPUnit',
-    'CSS',
-    'Antd',
-    'Tailwind',
   ],
   experiences: [
-    {
+    /*{
       company: 'Company Name',
       position: 'Position',
       from: 'September 2021',
@@ -112,32 +109,26 @@ const CONFIG = {
       from: 'July 2019',
       to: 'August 2021',
       companyLink: 'https://example.com',
-    },
+    },*/
   ],
   certifications: [
-    {
+    /*{
       name: 'Lorem ipsum',
       body: 'Lorem ipsum dolor sit amet',
       year: 'March 2022',
       link: 'https://example.com',
-    },
+    },*/
   ],
   educations: [
     {
-      institution: 'Institution Name',
-      degree: 'Degree',
-      from: '2015',
-      to: '2019',
-    },
-    {
-      institution: 'Institution Name',
-      degree: 'Degree',
-      from: '2012',
-      to: '2014',
+      institution: 'IUT de Lannion - Informatique',
+      degree: 'BUT',
+      from: '2024',
+      to: '2027',
     },
   ],
   publications: [
-    {
+    /*{
       title: 'Publication Title',
       conferenceName: '',
       journalName: 'Journal Name',
@@ -154,24 +145,22 @@ const CONFIG = {
       link: 'https://example.com',
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-    },
+    },*/
   ],
-  // Display articles from your medium or dev account. (Optional)
   blog: {
-    source: 'dev', // medium | dev
-    username: 'arifszn', // to hide blog section, keep it empty
-    limit: 2, // How many articles to display. Max is 10.
+    /*source: 'dev', // medium | dev
+    username: 'kercourt', // to hide blog section, keep it empty
+    limit: 2, // How many articles to display. Max is 10.*/
   },
   googleAnalytics: {
     id: '', // GA3 tracking id/GA4 tag id UA-XXXXXXXXX-X | G-XXXXXXXXXX
   },
-  // Track visitor interaction and behavior. https://www.hotjar.com
   hotjar: {
     id: '',
     snippetVersion: 6,
   },
   themeConfig: {
-    defaultTheme: 'emerald',
+    defaultTheme: 'bumblebee',
 
     // Hides the switch in the navbar
     // Useful if you want to support a single color mode
@@ -186,18 +175,8 @@ const CONFIG = {
 
     // Available themes. To remove any theme, exclude from here.
     themes: [
-      'light',
       'bumblebee',
-      'emerald',
-      'garden',
-      'pastel',
-      'fantasy',
-      'cmyk',
-      'autumn',
-      'lemonade',
-      'winter',
       'dim',
-      'procyon',
     ],
 
     // Custom theme, applied to `procyon` theme
@@ -213,11 +192,7 @@ const CONFIG = {
   },
 
   // Optional Footer. Supports plain text or HTML.
-  footer: `Made with <a 
-      class="text-primary" href="https://github.com/arifszn/gitprofile"
-      target="_blank"
-      rel="noreferrer"
-    >GitProfile</a> and ❤️`,
+  footer: `© 2025 Keren Courtois. Tous droits réservés.`,
 
   enablePWA: true,
 };
