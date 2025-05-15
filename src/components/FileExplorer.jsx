@@ -75,10 +75,10 @@ const FileExplorer = ({
             <img
                 src={`${process.env.PUBLIC_URL}/images/${isOpen ? 'folder-open.png' : 'folder-closed.png'}`}
                 alt="folder-icon"
-                className="folder-icon"
+                className="folder icon"
               />
             <span
-              className="folder-name"
+              className="folder name"
             >
               {projectName}
             </span>
@@ -90,10 +90,15 @@ const FileExplorer = ({
 
                 const isLink = fileName === 'github.link';
 
+                const isActive =
+                activeFile &&
+                activeFile.name === fileName &&
+                activeFile.content === content;
+
                 return (
                   <div
                     key={fileName}
-                    className={`file ${isLink ? 'link' : 'readme'}`}
+                    className={`file ${isLink ? 'link' : 'readme'} ${isActive ? 'active' : ''}`}
                     onClick={() => {
                       if (isLink) {
                         handleFileLinkClick(content);
@@ -104,7 +109,7 @@ const FileExplorer = ({
                   >
                     <img
                       src={`${process.env.PUBLIC_URL}/images/${isLink ? 'link.png' : 'file.png'}`}
-                      alt={`${isLink ? 'link' : 'file'}-icon`}
+                      alt={`${isLink ? 'link' : 'file'} icon`}
                     />
                     <span
                       className="filename"

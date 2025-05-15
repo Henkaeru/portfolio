@@ -1,0 +1,169 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Root window container */
+.Window {
+  @apply flex flex-col h-screen bg-[color:var(--color-main)] text-[color:var(--color-text)];
+}
+
+/* Header bar */
+.window.header {
+  @apply flex justify-between items-center bg-[color:var(--color-secondary)] px-4 py-2 border-b;
+  border-color: var(--color-tertiary);
+  height: auto;
+  min-height: 2.5rem;
+}
+
+/* Terminal toggle button */
+.TerminalToggleButton {
+  @apply text-sm text-[color:var(--color-text)] cursor-pointer rounded px-2 py-1 transition-colors duration-200;
+}
+.TerminalToggleButton:hover {
+  @apply bg-[color:var(--color-highlight)] text-[color:var(--color-highlight-text)];
+}
+
+/* Body container with two panes */
+.window.body {
+  @apply flex flex-1 overflow-hidden;
+}
+
+/* Left pane: File explorer */
+.window.body.left {
+  @apply bg-[color:var(--color-secondary)] overflow-y-auto p-2 flex flex-col border-r;
+  border-color: var(--color-tertiary);
+  width: auto;
+  flex-grow: 0;
+  flex-shrink: 0;
+  min-width: 18rem;
+  max-width: 30rem;
+}
+
+/* File explorer scroll and spacing */
+.FileExplorer {
+  @apply h-full overflow-y-auto space-y-2;
+}
+
+/* Right pane: vertical flex layout with tabs on top, editor fills, terminal bottom */
+.window.body.right {
+  @apply flex flex-col flex-grow bg-[color:var(--color-main)] text-[color:var(--color-text)] w-full;
+  min-width: 0;
+  overflow: hidden;
+}
+
+/* Tabs bar */
+.TabsBar {
+  @apply flex items-center overflow-x-auto bg-[color:var(--color-secondary)] border-b;
+  border-color: var(--color-tertiary);
+  flex-shrink: 0;
+  height: auto;
+  max-height: 3rem;
+  overflow-y: hidden;
+  white-space: nowrap;
+  gap: 0;      /* remove spacing between tabs */
+  padding: 0;  /* remove padding around tabs */
+}
+
+/* Tab wrapper */
+.tab {
+  @apply flex items-center gap-1 px-3 py-1 bg-[color:var(--color-secondary)] text-[color:var(--color-text)] cursor-pointer select-none whitespace-nowrap border-l border-r;
+  border-color: var(--color-tertiary);
+  border-radius: 0;
+}
+
+/* Active tab */
+.tab.active {
+  @apply bg-[color:var(--color-highlight)] text-[color:var(--color-highlight-text)] font-semibold;
+}
+
+/* Tab name text — no border or background */
+.tab.name {
+  @apply truncate bg-transparent border-none;
+}
+
+/* Close icon — no border or background */
+.close.icon {
+  @apply w-4 h-4 cursor-pointer transition-transform duration-300 bg-transparent border-none;
+}
+.close.icon:hover {
+  @apply text-[color:var(--color-highlight-text)];
+  transform: rotate(180deg);
+}
+
+/* Editor fills remaining space with bottom border */
+.Editor {
+  @apply flex-1 overflow-y-auto p-4 prose prose-invert w-full min-w-0 border-b;
+  border-color: var(--color-tertiary);
+  max-width: 100% !important;
+  background-color: var(--color-main);
+  color: var(--color-text);
+}
+
+/* Terminal area */
+.Terminal {
+  @apply h-32 bg-[color:var(--color-secondary)] text-[color:var(--color-text)] px-4 py-2 font-mono text-sm overflow-y-auto flex-shrink-0;
+}
+
+.Terminal > div {
+  @apply mb-1;
+}
+
+.Terminal input[type="text"] {
+  @apply bg-transparent border-none focus:outline-none w-full text-[color:var(--color-text)];
+}
+
+/* Folder and file styles */
+.folder-view {
+  @apply border-b pb-2 mb-2;
+  border-color: var(--color-main);
+}
+
+.folder {
+  @apply flex items-center gap-2;
+}
+
+.folder.icon {
+  @apply w-4 h-4;
+}
+
+.folder.name {
+  @apply font-medium;
+}
+
+.file-list {
+  @apply ml-4 space-y-1;
+}
+
+.file {
+  @apply flex items-center gap-2 cursor-pointer px-1 rounded;
+}
+
+.file.readme,
+.file.link {
+  @apply hover:bg-[color:var(--color-highlight)];
+}
+
+.file.active {
+  @apply bg-[color:var(--color-highlight)] text-[color:var(--color-highlight-text)] font-semibold;
+}
+
+.filename {
+  @apply text-sm;
+}
+
+.file img {
+  @apply w-4 h-4;
+}
+
+/* Scrollbar styling */
+.FileExplorer::-webkit-scrollbar,
+.Editor::-webkit-scrollbar,
+.Terminal::-webkit-scrollbar {
+  @apply w-2;
+}
+
+.FileExplorer::-webkit-scrollbar-thumb,
+.Editor::-webkit-scrollbar-thumb,
+.Terminal::-webkit-scrollbar-thumb {
+  @apply bg-[color:var(--color-main)] rounded;
+}

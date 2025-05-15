@@ -19,47 +19,49 @@ const Window = () => {
 
   return (
     <>
-      <div className="window-header">
+      <div className="window header">
         <TerminalToggleButton
           showTerminal={showTerminal}
           setShowTerminal={setShowTerminal}
         />
-        {navFiles.length > 0 && (
+      </div>
+      <div className="window body">
+        <div className="window body left">
+          <FileExplorer
+            projects={projects}
+            setProjects={setProjects}
+            navFiles={navFiles}
+            setNavFiles={setNavFiles}
+            activeFile={activeFile}
+            setActiveFile={setActiveFile}
+            setPendingPrompt={setPendingPrompt}
+            terminalHistory={terminalHistory}
+            setTerminalHistory={setTerminalHistory}
+            showTerminal={showTerminal}
+            setShowTerminal={setShowTerminal}
+          />
+        </div>
+        <div className="window body right">
           <TabsBar
             navFiles={navFiles}
             setNavFiles={setNavFiles}
             activeFile={activeFile}
             setActiveFile={setActiveFile}
           />
-        )}
-      </div>
-      <div className="window-body">
-        <FileExplorer
-          projects={projects}
-          setProjects={setProjects}
-          navFiles={navFiles}
-          setNavFiles={setNavFiles}
-          activeFile={activeFile}
-          setActiveFile={setActiveFile}
-          setPendingPrompt={setPendingPrompt}
-          terminalHistory={terminalHistory}
-          setTerminalHistory={setTerminalHistory}
-          showTerminal={showTerminal}
-          setShowTerminal={setShowTerminal}
-        />
-        <Editor
-          activeFile={activeFile}
-        />
-        {showTerminal && (
-            <Terminal
-              terminalHistory={terminalHistory}
-              setTerminalHistory={setTerminalHistory}
-              pendingPrompt={pendingPrompt}
-              setPendingPrompt={setPendingPrompt}
-              terminalInput={terminalInput}
-              setTerminalInput={setTerminalInput}
-            />
-        )}
+          <Editor
+            activeFile={activeFile}
+          />
+          {showTerminal && (
+              <Terminal
+                terminalHistory={terminalHistory}
+                setTerminalHistory={setTerminalHistory}
+                pendingPrompt={pendingPrompt}
+                setPendingPrompt={setPendingPrompt}
+                terminalInput={terminalInput}
+                setTerminalInput={setTerminalInput}
+              />
+          )}
+        </div>
       </div>
     </>
   );

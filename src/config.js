@@ -13,3 +13,12 @@ export const LOCAL_PROJECTS = [
         READMEmd: '## Titre moins dingue'
     }
 ]
+
+export const CSS_COLORS = {
+  main: '#1e1e2f',          // for main background
+  secondary: '#2a2a40',     // for panels
+  tertiary: '#3a3a50',       // tiny touch
+  text: '#c8c8d8',          // text color
+  highlight: '#7c3aed',     // for highlight
+  highlightText: '#f0e9ff', // for highlight
+}
