@@ -73,7 +73,7 @@ const FileExplorer = ({
           <div className="folder"
               onClick={() => toggleFolder(projectName)}>
             <img
-                src={`/images/${isOpen ? 'folder-open.png' : 'folder-closed.png'}`}
+                src={`${process.env.PUBLIC_URL}/images/${isOpen ? 'folder-open.png' : 'folder-closed.png'}`}
                 alt="folder-icon"
                 className="folder-icon"
               />
@@ -103,7 +103,7 @@ const FileExplorer = ({
                     }}
                   >
                     <img
-                      src={`/images/${isLink ? 'link.png' : 'file.png'}`}
+                      src={`${process.env.PUBLIC_URL}/images/${isLink ? 'link.png' : 'file.png'}`}
                       alt={`${isLink ? 'link' : 'file'}-icon`}
                     />
                     <span

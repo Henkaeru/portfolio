@@ -22,7 +22,7 @@ const TabsBar = ({ navFiles, setNavFiles, activeFile, setActiveFile }) => {
             {file.name}
           </span>
           <img
-            src="/images/close.png"
+            src={`${process.env.PUBLIC_URL}/images/close.png`}
             alt="Close"
             className="close-icon"
             onClick={() => closeTab(file)}
