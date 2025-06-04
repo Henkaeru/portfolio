@@ -1,42 +1,38 @@
 import { errorMessages } from '../data/errors';
 
-const Terminal = ({ terminalHistory, setTerminalHistory, pendingPrompt, setPendingPrompt, terminalInput, setTerminalInput }) => {
+const Terminal = ({
+  terminalHistory,
+  setTerminalHistory,
+  pendingPrompt,
+  setPendingPrompt,
+  terminalInput,
+  setTerminalInput
+}) => {
   
   const handleInputChange = (e) => {
     setTerminalInput(e.target.value);
   };
 
-  const handleTerminalSubmit = () => {
+  const addToHistory = (input, output = '') => {
+    setTerminalHistory(prev => [...prev, { input, output }]);
+  };
 
+  const handleTerminalSubmit = () => {
     if (pendingPrompt) {
-      switch (terminalInput) {
-        case 'y':
-          setTerminalHistory(prev => [
-            ...prev,
-            { input: pendingPrompt.prompt, output: ''},
-            { input: terminalInput, output: ''}
-          ]);
-          pendingPrompt.onConfirm();
-          break;
-        case 'n':
-          setTerminalHistory(prev => [
-            ...prev,
-            { input: pendingPrompt.prompt, output: ''},
-            { input: terminalInput, output: ''}
-          ]);
-          pendingPrompt.onCancel();
-          break;
-        default:
-          break;
+      addToHistory(pendingPrompt.prompt);
+      addToHistory(terminalInput);
+
+      if (terminalInput === 'y' && typeof pendingPrompt.onConfirm === 'function') {
+        pendingPrompt.onConfirm();
+      } else if (terminalInput === 'n' && typeof pendingPrompt.onCancel === 'function') {
+        pendingPrompt.onCancel();
       }
+      
       setPendingPrompt(null);
     } else {
+      // Show random error for unknown commands
       const randomError = errorMessages[Math.floor(Math.random() * errorMessages.length)];
-
-      setTerminalHistory((prevHistory) => [
-        ...prevHistory,
-        { input: terminalInput, output: randomError }
-      ]);
+      addToHistory(terminalInput, randomError);
     }
     setTerminalInput('');
   };
@@ -49,14 +45,13 @@ const Terminal = ({ terminalHistory, setTerminalHistory, pendingPrompt, setPendi
 
   return (
     <div className="Terminal">
-      <div>
+      <div className="terminal-history">
         {terminalHistory.map((entry, index) => (
-          <div key={index}>
-            {entry.input && (
-              <span>{`> ${entry.input}`}</span>
-            )}
+          <div key={index} className="terminal-entry">
+            {entry.input && <span className="terminal-input">{`> ${entry.input}`}</span>}
             {entry.output && (
               <div
+                className="terminal-output"
                 style={{ whiteSpace: 'pre-wrap', wordWrap: 'break-word' }}
               >
                 {entry.output}
@@ -65,7 +60,7 @@ const Terminal = ({ terminalHistory, setTerminalHistory, pendingPrompt, setPendi
           </div>
         ))}
         {pendingPrompt && (
-          <div>
+          <div className="terminal-prompt">
             <span>{`> ${pendingPrompt.prompt}`}</span>
           </div>
         )}
@@ -76,6 +71,8 @@ const Terminal = ({ terminalHistory, setTerminalHistory, pendingPrompt, setPendi
         onChange={handleInputChange}
         onKeyDown={handleKeyDown}
         placeholder="Type your command..."
+        aria-label="Terminal input"
+        autoComplete="off"
       />
     </div>
   );

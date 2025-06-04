@@ -15,6 +15,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         '--color-text': CSS_COLORS.text,
         '--color-highlight': CSS_COLORS.highlight,
         '--color-highlight-text': CSS_COLORS.highlightText,
+        '--invert-icon': CSS_COLORS.invertIcon ? 'invert(1)' : 'invert(0)',
         height: '100vh'
       }}
     >
