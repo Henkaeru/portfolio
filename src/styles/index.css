@@ -129,6 +129,10 @@
   @apply leading-tight;
 }
 
+.Editor {
+  @apply pl-8 pr-32;
+}
+
 .Editor > :first-child {
   margin-top: 1rem;
 }

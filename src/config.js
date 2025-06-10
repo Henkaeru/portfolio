@@ -15,7 +15,7 @@ export const LOGO = 'logo.webp';
 
 export const EMPTY_FILE = 'Empty.md';
 
-export const EASTER_EGG_LINK = 'https://openhtml5games.github.io/games-mirror/dist/mariohtml5/main.html'
+export const EASTER_EGG_LINK = 'https://www.nytimes.com/games/wordle/index.html'
 
 export const LOCAL_FOLDER = 'local';
 
@@ -24,28 +24,28 @@ export const LOCAL_FILES = [
   'contact.md',
   'resume.link',
   {'projects': [
-    {"Réaliser un développement d'application": [
-      "Implémentation d'un besoin client.md"
+    {"1 Réaliser un développement d'application": [
+      "1.01 Implémentation d'un besoin client.md"
       ]
     },
-    {"Optimiser des applications informatiques": [
-      "Comparaison d'approches algorithmiques.md"
+    {"2 Optimiser des applications informatiques": [
+      "2.01 Comparaison d'approches algorithmiques.md"
       ]
     },
-    {"Administrer des systèmes informatiques communicants complexes": [
-      "Installation d'un poste pour le développement.md"
+    {"3 Administrer des systèmes informatiques communicants complexes": [
+      "3.01 Installation d'un poste de développement.md"
       ]
     },
-    {"Gérer des données de l'information": [
-      "Création d'une base de données.md"
+    {"4 Gérer des données de l'information": [
+      "4.01 Création d'une base de données.md"
       ]
     },
-    {"Conduite de projet": [
-      "Recueil de besoins.md"
+    {"5 Conduite de projet": [
+      "5.01 Recueil de besoins.md"
       ]
     },
-    {"Travailler dans une équipe informatique": [
-      "Découverte de l'environnement économique et écologique.md"
+    {"6 Travailler dans une équipe informatique": [
+      "6.01 Découverte de l'environnement économique et écologique.md"
       ]
     },
   ]}
